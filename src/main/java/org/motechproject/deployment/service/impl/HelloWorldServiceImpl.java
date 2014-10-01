@@ -18,14 +18,4 @@ public class HelloWorldServiceImpl implements HelloWorldService {
         return "Hello World";
     }
 
-    @Override
-    public String serverName() {
-        try {
-            InetAddress ip = InetAddress.getLocalHost();
-            return ip.getHostName();
-        } catch (UnknownHostException uh) {
-            return "";
-        }
-    }
-
 }

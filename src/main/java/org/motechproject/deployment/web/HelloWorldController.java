@@ -29,10 +29,4 @@ public class HelloWorldController {
     public String sayHello() {
         return String.format("{\"message\":\"%s\"}", helloWorldService.sayHello());
     }
-
-    @RequestMapping("/serverName")
-    @ResponseBody
-    public String serverName() {
-        return helloWorldService.serverName();
-    }
 }

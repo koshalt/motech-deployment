@@ -6,7 +6,4 @@ package org.motechproject.deployment.service;
 public interface HelloWorldService {
 
     String sayHello();
-
-    String serverName();
-
 }

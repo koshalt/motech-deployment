@@ -5,8 +5,8 @@
 
     <import resource="classpath*:META-INF/motech/*.xml" />
 
-    <osgi:service ref="helloWorldService"
-        interface="org.motechproject.deployment.service.HelloWorldService" />
+    <osgi:service ref="helloWorldService" interface="org.motechproject.deployment.service.HelloWorldService" />
+    <osgi:service ref="statusService" interface="org.motechproject.deployment.service.StatusService" />
 
     <osgi:service ref="helloWorldRecordService"
         interface="org.motechproject.deployment.service.HelloWorldRecordService" />

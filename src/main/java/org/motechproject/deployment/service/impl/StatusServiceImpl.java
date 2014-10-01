@@ -1,6 +1,7 @@
 package org.motechproject.deployment.service.impl;
 
 import org.motechproject.deployment.service.StatusService;
+import org.springframework.stereotype.Service;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -8,21 +9,28 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * Created by kosh on 10/1/14.
+ * Status service implementation to get server details
  */
+@Service("statusService")
 public class StatusServiceImpl implements StatusService {
+
+    private String serverName;
+
+    public StatusServiceImpl() {
+        try {
+            InetAddress ip = InetAddress.getLocalHost();
+            serverName = ip.getHostName();
+        } catch (UnknownHostException uh) {
+            serverName =  "Could not get server name - " + uh.toString();
+        }
+    }
 
     public String serverStatus() {
         return "OK";
     }
 
     public String serverName() {
-        try {
-            InetAddress ip = InetAddress.getLocalHost();
-            return ip.getHostName();
-        } catch (UnknownHostException uh) {
-            return "Could not get server name - " + uh.toString();
-        }
+        return this.serverName;
     }
 
     public String serverTime() {
