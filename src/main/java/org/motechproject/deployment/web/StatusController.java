@@ -22,13 +22,13 @@ public class StatusController {
         return statusService.serverName();
     }
 
-    @RequestMapping(value = "serverStatus", method = RequestMethod.GET)
+    @RequestMapping(value = "/serverStatus", method = RequestMethod.GET)
     @ResponseBody
     public String serverStatus() {
         return statusService.serverStatus();
     }
 
-    @RequestMapping(value = "serverTime", method = RequestMethod.GET)
+    @RequestMapping(value = "/serverTime", method = RequestMethod.GET)
     @ResponseBody
     public String serverTime() {
         return statusService.serverTime();
