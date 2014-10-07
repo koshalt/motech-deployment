@@ -6,8 +6,10 @@
     <import resource="classpath*:META-INF/motech/*.xml" />
 
     <osgi:service ref="statusService" interface="org.motechproject.deployment.service.StatusService" />
+    <osgi:service ref="clientService" interface="org.motechproject.deployment.service.ClientService" />
 
     <osgi:reference id="statusRecordDataService" interface="org.motechproject.deployment.repository.StatusRecordDataService" />
+    <osgi:reference id="clientRecordDataService" interface="org.motechproject.deployment.repository.ClientRecordDataService" />
     <osgi:reference id="eventRelayOsgi" cardinality="0..1" interface="org.motechproject.event.listener.EventRelay" />
 
 </beans>
